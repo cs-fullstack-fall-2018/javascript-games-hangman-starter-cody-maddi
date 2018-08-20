@@ -29,5 +29,4 @@ function strike () {
 
 var gifs= [];
 
-
-gameStart();
+gameStart()
