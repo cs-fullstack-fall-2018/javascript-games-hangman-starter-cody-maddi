@@ -2,4 +2,6 @@ let wordList = ["Awkward", "Bagpipes", "Banjo", "Bungler", "Croquet", "Crypt", "
 var randomWord = Math.floor(Math.random() * wordList.length);
 console.log(wordList[randomWord]);
 
+var strike = 0;
+while () 
 
