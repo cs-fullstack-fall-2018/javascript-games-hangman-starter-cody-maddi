@@ -4,7 +4,7 @@ function gameStart() {
     var wordList = ["Awkward", "Bagpipes", "Banjo", "Bungler", "Croquet", "Crypt", "Dwarves", "Fervid", "Fishhook", "Fjord", "Gazebo", "Gypsy", "Haiku", "Haphazard", "Hyphen", "Ivory", "Jazzy", "Jiffy", "Jinx", "Jukebox", "Kayak", "Kiosk", "Klutz", "Memento", "Mystify", "Numbskull", "Ostracize", "Oxygen", "Pajama", "Phlegm", "Pixel", "Polka", "Quad", "Quip", "Rhythmic", "Rogue", "Sphinx", "Squawk", "Swivel", "Toady", "Twelfth", "Unzip", "Waxy", "Wildebeest", "Yacht", "Zealous", "Zigzag", "Zippy", "Zombie"];
     var randomWord = Math.floor(Math.random() * wordList.length);
     var chosenWord = wordList[randomWord];
-    console.log(chosenWord)
+    console.log(chosenWord);
     letterGuess(chosenWord);
 }
 //this is where the user guesses a letter and this function runs to check if letter is in the chosenword
@@ -12,7 +12,12 @@ function letterGuess(chosenWord) {
     var guess = prompt("Guess a letter: ");
     guess = guess.toUpperCase();
     var guessValue = chosenWord.indexOf(guess);
-    if (guessValue
+    if (guessValue>=0){
+        console.log('It was in there!')
+    }
+    else {
+        strike()
+    }
     var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 }
 
@@ -21,12 +26,13 @@ function letterGuess(chosenWord) {
 //strike update
 function strike () {
     var strike = 0;
-    document.write("Strike: ", strike);
+    document.write("Strike: "+ strike);
     while (strike !== 10) {
         strike += 1;
+        letterGuess()
     }
 }
 
 var gifs= [];
 
-gameStart()
+gameStart();
